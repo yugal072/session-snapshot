@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Session Snapshot</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="header">
+    <h1>Session Snapshot</h1>
+  </div>
+  
+  <div class="main-actions">
+    <input type="text" id="session-name" placeholder="Optional session name..." />
+    <button id="save-btn" class="primary-btn">Save Current Session</button>
+  </div>
+
+  <div class="alerts" id="alerts"></div>
+
+  <div class="sessions-container">
+    <h2>Saved Sessions</h2>
+    <div id="sessions-list" class="sessions-list">
+      <!-- Session items will be dynamically injected here -->
+      <div class="loading">Loading sessions...</div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

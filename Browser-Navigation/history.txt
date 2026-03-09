@@ -30,3 +30,5 @@ youtube.com,Youtube
 zapier.com,Zapier
 youtube.com,Youtube
 whatsapp.com,Whatsapp
+whatsapp.com,Whhatsapp
+youtube.com,Yioutube

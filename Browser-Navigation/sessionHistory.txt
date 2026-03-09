@@ -55,3 +55,6 @@ END
 SNAPSHOT:1762547932,Auto-saved on exit
 TAB:1,whatsapp.com
 END
+SNAPSHOT:1762935388,Auto-saved on exit
+TAB:1,whatsapp.com -> whatsapp.com -> youtube.com
+END

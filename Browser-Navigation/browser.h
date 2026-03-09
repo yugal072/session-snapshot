@@ -23,7 +23,7 @@ private:
     time_t lastSnapshotTime = 0;
     static const int SNAPSHOT_INTERVAL = 300;  // 5 minutes
 
-    // ------------------ Helper Functions ------------------
+    // Helper Functions 
     void addToHistory(Page p) {
         HistoryNode* node = new HistoryNode(p);
         if (!historyHead) historyHead = node;
@@ -78,7 +78,7 @@ private:
         cout << "Captured snapshot: " << snapshot.tabData.size() << " tabs.\n";
     }
 
-    // ------------------ Divide & Conquer Section ------------------
+    // Sorting and searching
     void merge(vector<Page>& arr, int left, int mid, int right) {
         vector<Page> L(arr.begin() + left, arr.begin() + mid + 1);
         vector<Page> R(arr.begin() + mid + 1, arr.begin() + right + 1);
@@ -119,7 +119,7 @@ private:
     }
 
 public:
-    // ------------------ Constructor & Destructor ------------------
+    // Constructor & Destructor 
     Browser() : currentTabIndex(-1), nextTabId(1), historyHead(nullptr) {
         historyHead = FileManager::loadHistory();
         FileManager::loadBookmarks(bookmarks);
@@ -139,7 +139,7 @@ public:
         for (auto tab : tabs) delete tab;
     }
 
-    // ------------------ Core Browser Features ------------------
+    // Core Browser Features 
     void createNewTab() {
         tabs.push_back(new Tab(nextTabId++));
         currentTabIndex = tabs.size() - 1;
@@ -164,7 +164,7 @@ public:
             cout << "\n Cannot close the last tab!\n";
             return;
         }
-        cout << "\n🗙 Closing Tab #" << tabs[currentTabIndex]->id << "\n";
+        cout << "\n Closing Tab #" << tabs[currentTabIndex]->id << "\n";
         delete tabs[currentTabIndex];
         tabs.erase(tabs.begin() + currentTabIndex);
         if (currentTabIndex >= tabs.size()) currentTabIndex = tabs.size() - 1;
@@ -219,7 +219,7 @@ public:
         cout << "\nForward to: " << tab->currentPage.title << "\n";
     }
 
-    // ------------------ Bookmarks with Divide & Conquer ------------------
+    // Bookmarks 
     void addBookmark() {
         Tab* tab = tabs[currentTabIndex];
         if (tab->currentPage.url.empty()) {
@@ -269,7 +269,7 @@ public:
         cout << "===================================\n";
     }
 
-    // ------------------ Other Features ------------------
+    // Other Features 
     void viewHistory() {
         if (!historyHead) {
             cout << "\n No browsing history.\n";
