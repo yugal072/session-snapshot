@@ -1,4 +1,4 @@
-# Browser Navigation & Session Snapshot Extension
+# Session Snapshot Extension
 
 Welcome to the **Browser Navigation** project! This repository contains a unique two-part project centered around browser session management and navigation mechanics. It features both a simulated C++ terminal application and a fully functional Chrome extension.
 
